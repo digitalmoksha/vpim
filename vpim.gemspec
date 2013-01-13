@@ -1,6 +1,8 @@
 require 'ubygems'
 require 'pp'
 
+require 'vpim/version'
+
 def info(s)
   {
     :author => "Sam Roberts",
