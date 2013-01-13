@@ -9,7 +9,7 @@
 module Vpim
   PRODID = '-//Octet Cloud//vPim 13.01.13//EN'
 
-  VERSION = '13.01.13'
+  VERSION = '13.1.13'
 
   # Return the API version as a string.
   def Vpim.version

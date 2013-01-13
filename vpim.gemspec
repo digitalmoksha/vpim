@@ -1,5 +1,4 @@
-require 'ubygems'
-require 'pp'
+$:.push File.expand_path("../lib", __FILE__)
 
 require 'vpim/version'
 
@@ -17,7 +16,7 @@ end
 spec_vpim = Gem::Specification.new do |s|
   info(s)
   s.name              = "vpim"
-  s.version           = Vpim::VERSION # `ruby stamp.rb` # caused infinite look in rake tasks
+  s.version           = Vpim::VERSION 
   s.summary           = "iCalendar and vCard support for ruby"
   s.description       = <<'---'
 This is a pure-ruby library for decoding and encoding vCard and iCalendar data
@@ -42,11 +41,7 @@ This is a pure-ruby library for decoding and encoding vCard and iCalendar data
   s.executables       = Dir["bin/*"].map{|path| File.basename(path)}
 
   s.require_path      = "lib"
-# s.add_dependency("plist")
-# s.autorequire       = "vpim"
 end
-
-#pp [spec_vpim, spec_vpim.instance_variables]
 
 spec_vpim_icalendar = Gem::Specification.new do |s|
   info(s)
@@ -59,14 +54,6 @@ support for ruby. You can install vPim directly.
 ---
   s.add_dependency("vpim")
 end
-
-#require 'hoe'
-#
-#Hoe.new(spec_vpim.name, spec_vpim.version) do |p|
-#  p.rubyforge_name = "vpim"
-#  p.remote_rdoc_dir = '' # Release to root
-#end
-#
 
 if $0==__FILE__
   Gem::Builder.new(spec_vpim).build
